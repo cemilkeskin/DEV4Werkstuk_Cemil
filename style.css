@@ -1,0 +1,189 @@
+*{
+    font-family: 'Roboto', sans-serif;
+    color: #E5EBEF;
+    
+    scrollbar-color:  #f34447 #202B43; 
+    scrollbar-width: thin;  
+}
+body{
+    margin: 0;
+    padding: 0;
+
+    background-color: #202B43;
+}
+.box{
+    background-color: #182338; 
+    border: 2px;
+    padding: 10px;
+    border-radius: 30px;
+    position: relative;
+    transition: all 0.2s ease 0s; 
+
+}
+
+.box:hover{
+    transform: scale(1.05); 
+    cursor: pointer;
+    background-color: #20304d;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.11);
+} 
+
+.box:hover .boxGenre{
+    background-color:#f34447;
+    transition: all 0.2s ease 0s; 
+} 
+
+.boxGenre{
+    position: absolute;
+    background-color: #0E1726;
+    border-radius: 30px; 
+    padding: 5px 10px 5px 10px;  
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 1px;
+    font-size: 12px;
+    margin: 10px; 
+}
+
+.boxTitle{
+    margin-top: 55px;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 3px;
+    font-size: 24px;
+    margin: 55px 13px 13px 13px;
+}
+.boxDescription{
+
+    font-weight: 500;
+    letter-spacing: 1px; 
+    font-size: 12px;
+    margin: 13px;
+}
+.boxCategory{
+  
+    font-weight: 500;
+    letter-spacing: 1px; 
+    font-size: 12px;
+    margin: 13px;
+}
+
+.boxAge{
+    position: absolute;
+    background-color: #0E1726;
+    border-radius: 30px;
+    padding: 5px 10px 5px 10px;  
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 2px;
+    font-size: 12px;
+    margin: 10px;
+    top: 10px;
+    right: 10px;
+}
+  
+.container { 
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 250px auto 75px;
+    grid-template-rows: 65px auto 200px;
+    grid-template-areas: "header header header"
+        ". main ."
+        "footer footer footer"; 
+}
+
+header { 
+    grid-area: header;
+    display: grid;
+    grid-template-columns: 200px auto;
+    grid-template-areas: "logo nav";
+    background-color: #0E1726;
+} 
+   
+main {
+    grid-area: main;  
+    display: grid;
+    grid-template-columns: 45% 10% 35% 10%;  
+    grid-template-areas:     "home home home"
+                         "filter filter filter"
+                             "data data data"; 
+} 
+  .containerHome{
+      margin-top: 40px;
+      grid-area: home; 
+      display: grid;
+      position: relative;
+  } 
+
+  .containerData{
+      margin-top: 40px;
+      grid-area: data;
+      display: grid;
+      grid-gap: 50px; 
+      grid-template-columns: repeat(auto-fit, 440px);
+  }
+
+  .containerFilter{
+      grid-area: filter;
+  }
+  
+footer {
+    grid-area: footer;
+    background-color: #182338;
+}
+
+/*-------------- HEADER CSS ---------------*/
+
+header nav {
+    justify-self: flex-start;
+    align-self: center;
+    grid-area: nav;
+    margin-left: 20px;
+}  
+
+header nav a { 
+    list-style-type: none; 
+    margin: 0 30px; 
+    text-decoration: none;
+    background-color: #182338;  
+    border-radius: 30px;
+    padding: 6px 20px 6px 20px;  
+    text-transform: uppercase;
+    font-weight: 700; 
+    letter-spacing: 1px;
+    font-size: 12px;
+    transition: all 0.2s ease 0s; 
+}
+
+header nav a:hover {
+    transform: scale(1.05); 
+    cursor: pointer;
+    background-color: #293d63;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.11);
+}
+
+#logo {
+    width: 50px;
+    grid-area: logo;
+    justify-self: center;
+    align-self: center;
+}  
+#logo:hover {
+    opacity: 0.3; 
+    cursor: pointer;
+    transition: all 0.3s ease 0s; 
+}
+
+.imgHome{ 
+    width: 100%;
+    border-radius: 30px;
+}
+.imgDesc{
+    font-size: 14px;
+    font-weight: 400;
+    font-style: italic; 
+    letter-spacing: 0.2px;
+    text-align: end;
+    color: rgb(121, 134, 163); 
+}
+ 
