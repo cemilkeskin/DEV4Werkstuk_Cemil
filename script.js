@@ -42,7 +42,7 @@ $(function () {
                 filter.push(category);
                 filterGenre.push(genre);
 
-                divData += `<div class="box" id="${id}">`;
+                divData += `<div class="box ${genre}" id="${id}">`;
                 divData += `<h4 class="boxGenre">${genre}</h4>`;
                 divData += `<h2 class="boxTitle">${name}</h2>`;
                 divData += `<h4 class="boxDescription">${description}</h4>`;
@@ -65,8 +65,8 @@ $(function () {
             console.log(uniqueFiltersGenre);
 
             for (var i = 0; i < uniqueFilters.length; i++) {
-
-                let divFilter = '';
+ 
+                let divFilter = ''; 
                 let uniqueGenre = uniqueFilters[i];
 
                 console.log(uniqueGenre);
@@ -99,6 +99,10 @@ $(function () {
                 let extendedDesc = "";
                 let videoName = "";
 
+                let keytakeaways = "";
+
+
+
                 for (var i = 0; i < JSONdata; i++) {
                     if (id == data.items[i]._id) {
                         console.log(data.items[i]);
@@ -107,6 +111,7 @@ $(function () {
                         linkVid = data.items[i]["link-to-video"].metadata.html;
                         videoDesc = data.items[i]["social-share-description"]; 
                         extendedDesc = data.items[i]["video-notes"]; 
+                        keytakeaways = data.items[i]["key-takeaways"];   
                         
 
                         console.log(linkVid);
@@ -131,10 +136,6 @@ $(function () {
                 $('.containerHome').append(divVideo);
 
 
-
-
-
-               
                 let divVideoText = ''; 
 
                 divVideoText += `<div class="containerVideoText">`; 
@@ -143,7 +144,31 @@ $(function () {
                 divVideoText += `<h4 class="homeDesc">${extendedDesc}`;  
                 divVideoText += `</div>`;
 
-                $('.containerTextHome').append(divVideoText);
+                $('.containerTextVideoClick').append(divVideoText);
+
+
+                let divVideoTextRight = ''; 
+
+                divVideoTextRight += `<div class="containerVideoTextRight">`; 
+                divVideoTextRight += `<h4 class="textRightUL">${keytakeaways}`;   
+                divVideoTextRight += `</div>`; 
+
+                $('.containerTextVideoClick').append(divVideoTextRight);
+            });
+
+            $(".containerFooterLeft .boxFilterGenre").click(function () {
+                console.log("oldu"); 
+                location.href = "gebruiksvoorwaarden.html";
+            });
+
+            // $("header .img").click(function () {
+            //     console.log("oldu"); 
+            //     location.href = "index.html";
+            // });
+
+            $(".cultuur").click(function () {
+                console.log("oldu"); 
+                location.href = "gebruiksvoorwaarden.html";
             });
         });
 

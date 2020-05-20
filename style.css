@@ -90,7 +90,7 @@ body {
     display: grid;
     height: 100vh;
     grid-template-columns: 250px auto 75px;
-    grid-template-rows: 65px auto 200px;
+    grid-template-rows: 65px auto 300px;
     grid-template-areas: "header header header"
         ". main ."
         "footer footer footer";
@@ -109,10 +109,19 @@ main {
     display: grid;
     grid-template-columns: 45% 10% 35% 10%;
     grid-template-areas: "home home home"
-        "textHome textHome textHome" 
+        "textHome textHome textHome"
+        "textVideo textVideo textVideo"  
         "textFilter textFilter textFilter"
         "data data data";
 }
+footer { 
+    grid-area: footer; 
+    background-color: #182338; 
+    margin-top: 40px; 
+    grid-template-columns: 250px auto 75px;
+    grid-template-areas: ". footerT ."; 
+}
+
 
 .containerHome {
     margin-top: 40px;
@@ -156,10 +165,64 @@ main {
 .containerVideoText{
     grid-area: centerT;
 } 
-
-footer {
-    grid-area: footer;
+.containerVideoText{
+    grid-area: leftT;
     background-color: #182338;
+    border: 2px;
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 20px;
+    
+}
+.containerVideoTextRight{
+    grid-area: rightT;
+}
+.containerTextVideoClick{  
+    grid-area: textVideo;
+    display: grid; 
+    grid-template-columns: 67% 3% 30%;  
+    grid-template-areas: "leftT . rightT";
+    margin-bottom: 20px;
+}
+.containerFooter{
+    grid-area: footerT;
+    display: grid;   
+    grid-template-columns: 250px auto auto;
+    grid-template-areas: ". footerL footerR"; 
+}
+.containerFooterLeft{
+    grid-area: footerL; 
+    margin-top: 60px;
+  
+}
+.containerFooterRight{
+    grid-area: footerR;
+    margin-top: 60px;
+
+}
+.textRightUL{
+    background-color: #182338;
+    border: 2px;
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 20px; 
+    list-style-type: none;
+}
+
+.textRightUL li{
+    background-color: #f34447;
+    list-style-type: none;
+    margin-bottom: 10px;
+    border: 2px;
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 20px; 
+    margin-left: -40px;
+}
+
+
+.video{
+    overflow: hidden;
 }
 
 /*-------------- HEADER CSS ---------------*/
@@ -256,6 +319,21 @@ header nav a:hover {
     margin-bottom: 25px;
 }
 
+.homeTitle2{ 
+    font-size: 28px;
+    letter-spacing: 2px;
+    font-weight: 700;
+    margin-bottom: 25px;
+}
+ 
+.homeTitleSmall{
+    font-size: 20px;
+    letter-spacing: 1px;
+    font-weight: 700;
+    margin-bottom: 25px;
+    color: #f34447;
+}
+
 .homeDesc {
     font-size: 16px;
     letter-spacing: 1px;
@@ -274,4 +352,34 @@ header nav a:hover {
     padding: 25px;
     border-radius: 10px;
     margin-bottom: 25px; 
+}
+
+.footerText{
+    font-size: 14px;
+    font-weight: 400;
+    font-style: italic;
+    letter-spacing: 0.2px;
+    color: rgb(121, 134, 163);
+}
+
+.footerImg:hover{
+    transform: scale(1.05);
+    cursor: pointer;
+   
+}
+
+.footerImg{
+    margin-right: 40px; 
+    transition: all 0.2s ease 0s;
+
+}
+
+.mailto{
+ color:#f34447 ;
+}
+
+.imgLink{
+    color: inherit;
+    list-style-type: none;
+    text-decoration:none; 
 }
