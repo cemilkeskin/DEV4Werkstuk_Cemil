@@ -109,14 +109,16 @@ $(function () {
             $('.filterGenre').append(divFilter);
 
 
+            //elke klik dat we doen op de text input op onze pagina gaat hij de functie uitvoeren
             $('#theaterinput').on('keyup', function () {
-                //Get value of the element that is throwing the event => the inputfield!
-                //Na elke keyup gaat men de value van de key daar gaan schrijven
+        
+                //n aelke keyup gaan we onze content leegmaken voor nieuwe boxen
                 $("#content").empty();
                 let inputChar = $(this).val();
                 console.log(inputChar);
 
 
+                //we loopen over de globale array en als onze geschreven character in de naam terechtkomt gaanwe het printen
                 for (var i = 0; i < JSONdata; i++) {
 
                     if ( data.items[i].name.toLowerCase().includes(inputChar)) { 
@@ -125,14 +127,14 @@ $(function () {
                     let category = data.items[i].category; 
                     let name = data.items[i].name;
                     let genre = data.items[i]["genre-v2"];
-                    let description = data.items[i].excerpt;
+                    let description = data.items[i].excerpt; 
                     let createdby = data.items[i]["created-by"];
                     let age = data.items[i].age;
                     let id = data.items[i]._id;
 
                     //we maken een globale array met alle categories en genres erop dan gaan we op basis van deze array het filteren
                     filter.push(category); 
-                    filterGenre.push(genre); 
+                    filterGenre.push(genre);  
  
                     //we plaatsen onze data in onze pagina
                     divData += `<br><div class="box ${genre}" id="${id}">`;
@@ -151,7 +153,7 @@ $(function () {
                     divData += `</div>`;
 
                     $('#content').append(divData);
-                    }
+                    } 
 
                    
                 }
