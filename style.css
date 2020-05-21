@@ -446,3 +446,31 @@ header nav a:hover {
   .inactive {
     background-color: #0E1726; 
   }
+
+  #theaterinput{   
+    width: 100%;
+    background-color: #232E44;
+    padding: 12px 20px;
+    margin: 8px 0; 
+    height: 55px;  
+    color: rgb(137, 160, 181);  
+    font-size: 16px; 
+    box-sizing: border-box;
+    border-radius: 7px 7px 7px 7px; 
+    border: 3px solid;  
+    border-color: rgb(243, 68, 71, 0.50);    
+    transition: 0.5s; 
+} 
+
+#theaterinput:focus{ 
+
+    background-color: white;
+    color: black;
+    padding: 12px 20px;
+    border-color:white;    
+    margin: 8px 0; 
+    box-sizing: border-box;
+    border-radius: 10px 10px 10px 10px;
+    transition: 0.5s;
+  
+}

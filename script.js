@@ -30,7 +30,7 @@ $(function () {
             // }
             allData();
             //function alldata gaan we gebruiken voor het deleten van filters dus zetten we in een aparte function
-            function allData() { 
+            function allData() {
 
                 //we loopen de globale json file en we appenden alles op onze pagina
                 for (var i = 0; i < JSONdata; i++) {
@@ -82,7 +82,7 @@ $(function () {
                 let divFilter = '';
                 let uniqueGenre = uniqueFilters[i];
 
-                console.log(uniqueGenre); 
+                console.log(uniqueGenre);
 
                 divFilter += `<h4 class="boxFilterGenre" id="${uniqueGenre}">${uniqueGenre}</h4>`;
 
@@ -94,7 +94,7 @@ $(function () {
             for (var i = 0; i < uniqueFiltersGenre.length; i++) {
 
 
-                let uniqueGenre = uniqueFiltersGenre[i]; 
+                let uniqueGenre = uniqueFiltersGenre[i];
 
                 console.log(uniqueGenre);
 
@@ -107,6 +107,58 @@ $(function () {
             //buiten de loop onder onze tweede filter array willen we een filter wissen button plaatsen. 
             divFilter += `<br> <h4 class="boxFilterWissen">Filters wissen</h4>`;
             $('.filterGenre').append(divFilter);
+
+
+            $('#theaterinput').on('keyup', function () {
+                //Get value of the element that is throwing the event => the inputfield!
+                //Na elke keyup gaat men de value van de key daar gaan schrijven
+                $("#content").empty();
+                let inputChar = $(this).val();
+                console.log(inputChar);
+
+
+                for (var i = 0; i < JSONdata; i++) {
+
+                    if ( data.items[i].name.toLowerCase().includes(inputChar)) { 
+ 
+                    let divData = '';
+                    let category = data.items[i].category; 
+                    let name = data.items[i].name;
+                    let genre = data.items[i]["genre-v2"];
+                    let description = data.items[i].excerpt;
+                    let createdby = data.items[i]["created-by"];
+                    let age = data.items[i].age;
+                    let id = data.items[i]._id;
+
+                    //we maken een globale array met alle categories en genres erop dan gaan we op basis van deze array het filteren
+                    filter.push(category); 
+                    filterGenre.push(genre); 
+ 
+                    //we plaatsen onze data in onze pagina
+                    divData += `<br><div class="box ${genre}" id="${id}">`;
+                    divData += `<h4 class="boxGenre">${genre}</h4>`; 
+                    divData += `<h2 class="boxTitle">${name}</h2>`;
+                    divData += `<h4 class="boxDescription">${description}</h4>`;
+                    divData += `<h4 class="boxCategory">${category}</h4>`;
+
+                    //als age geen waarde heeft dan gaan we het niet tonen als het wel een waarde heeft gaan we het appenden op onze pagina
+                    if (age == undefined) {
+ 
+                    } else {
+                        divData += `<h4 class="boxAge">${age}</h4>`;
+                    }
+
+                    divData += `</div>`;
+
+                    $('#content').append(divData);
+                    }
+
+                   
+                }
+
+                boxClick();
+
+            });
 
             //we plaatsen de boxclick function om het dan voor de volgende functies terug te roepen 
             boxClick();
@@ -165,12 +217,12 @@ $(function () {
                     console.log(str);
 
                     let divVideo = '';
- 
+
                     //iframe code van json plaatsen we in een video div
                     divVideo += `<div class="video">`;
                     divVideo += `${str}`;
                     divVideo += `</div>`;
- 
+
                     $('.containerHome').append(divVideo);
 
 
@@ -178,13 +230,13 @@ $(function () {
 
                     divVideoText += `<div class="containerVideoText">`;
                     divVideoText += `<h4 class="homeTitle">${videoName}`;
-                    divVideoText += `<h4 class="homeDesc">${videoDesc}`; 
+                    divVideoText += `<h4 class="homeDesc">${videoDesc}`;
                     divVideoText += `<h4 class="homeDesc">${extendedDesc}`;
                     divVideoText += `</div>`;
 
                     $('.containerTextVideoClick').append(divVideoText);
 
- 
+
                     let divVideoTextRight = '';
 
                     divVideoTextRight += `<div class="containerVideoTextRight">`;
@@ -386,7 +438,7 @@ $(function () {
                 //     let name = selectedFilter[i].name;
                 //     let genre = selectedFilter[i]["genre-v2"];
                 //     let description = selectedFilter[i].excerpt;
-                //     let createdby = selectedFilter[i]["created-by"];
+                //     let createdby = selectedFilter[i]["created-by"]; 
                 //     let age = selectedFilter[i].age;
                 //     let id = selectedFilter[i]._id;
 
@@ -413,7 +465,7 @@ $(function () {
             $(".filterGenre .boxFilterWissen").click(function () {
 
                 $(".containerData").empty();
-                allData();
+                allData(); 
                 boxClick();
 
             });
