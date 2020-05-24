@@ -115,7 +115,7 @@ $(function () {
                 //n aelke keyup gaan we onze content leegmaken voor nieuwe boxen
                 $("#content").empty();
                 let inputChar = $(this).val();
-                console.log(inputChar);
+                console.log(inputChar); 
 
 
                 //we loopen over de globale array en als onze geschreven character in de naam terechtkomt gaanwe het printen

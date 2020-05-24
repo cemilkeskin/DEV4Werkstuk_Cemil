@@ -16,15 +16,15 @@ body {
 .box {
     background-color: #182338;
     border: 2px;
-    padding: 10px;
-    border-radius: 30px;
+    padding: 10px; 
+    border-radius: 30px; 
     position: relative;
     transition: all 0.2s ease 0s;
 
 }
 
 .box:hover {
-    transform: scale(1.05);
+    transform: scale(1.05); 
     cursor: pointer;
     background-color: #20304d;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.11);
@@ -38,7 +38,7 @@ body {
 .boxGenre {
     position: absolute;
     background-color: #0E1726;
-    border-radius: 30px;
+    border-radius: 30px; 
     padding: 5px 10px 5px 10px;
     text-transform: uppercase;
     font-weight: 700;
@@ -317,7 +317,7 @@ header nav a:hover {
 }
 
 .boxFilterGenre:active {
-
+ 
     transform: scale(1.15);  
     cursor: pointer; 
     background-color: #fc989a;
